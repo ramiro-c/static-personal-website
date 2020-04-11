@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: ramirocerda.now.sh
+Token: 537e620fb8830e6d63370414737216b8181dfc66432d7751923ca4c0936337d6
