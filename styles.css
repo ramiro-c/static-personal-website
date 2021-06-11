@@ -84,8 +84,7 @@ a:hover::after {
   margin-bottom: 0;
 }
 .list_description {
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 1.55rem;
   color: #eee;
 }
 .list_description .date {
@@ -133,8 +132,32 @@ h1 {
 .footer > a::after {
   display: none;
 }
+.tic {
+  font-style: italic;
+}
 @media only screen and (max-width: 600px) {
   .profiles_list {
     flex-direction: column;
   }
+}
+/* Scrollbar */
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #13161b #eee;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #13161b;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #eee;
+  border-radius: 20px;
+  border: 3px solid #eee;
 }
