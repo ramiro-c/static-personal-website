@@ -3,7 +3,7 @@
 
 <head>
   <title>Ramiro Cerdá</title>
-  <meta name="description" content="Front-end Developer from Buenos Aires, Argentina" />
+  <meta name="description" content="Full-Stack Developer from Buenos Aires, Argentina" />
   <meta name="keywords"
     content="php, vuejs, vue, vuex, reactjs, react, javascript, developer, frontend, bootstrap, css3, html5, argentine" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -31,8 +31,10 @@
           years old Full-stack Developer from Argentina who loves to learn new things and solving challenges with
           technology.
         </p>
-        <p>I'm currently working at <a href="https://dev-gam.com.ar/" target="_blank" rel="noopener">DevGAM</a>
-          developing custom-made sites with an extensible back-office.
+        <p>
+          I currently work at <a href="https://dev-gam.com.ar/" target="_blank" rel="noopener">DevGAM</a> developing
+          customized business sites for stock management, accounting administration, shift and customer management,
+          among other functionalities.
         </p>
         <p>
           I'm co-founder of <a href="https://www.linkedin.com/in/new-logic-6081861a3/" target="_blank"
@@ -58,7 +60,7 @@
           <li>
             Modern and responsive design front-end development.
             <div class="list_description">
-              Tools: VueJS (included Vuetify and Vuex), PHP with Boostrap 3/4, ReactJS, Sass.
+              Tools: VueJS (included Vuetify and Vuex), JQuery, PHP with Boostrap 3/4, ReactJS, Sass.
             </div>
           </li>
           <li>
@@ -78,7 +80,7 @@
           <li>
             Bilingual.
             <div class="list_description">
-              I speak Spanish (native) and English (C1 | intermediate).
+              I speak Spanish (native) and English (C1/intermediate).
             </div>
           </li>
         </ul>
@@ -93,16 +95,7 @@
             Full-Stack Developer at
             <a href="https://dev-gam.com.ar" target="_blank" rel="noopener">DevGAM</a>
             <div class="list_description">
-              ======================================== 
-              
-              <br>
-              
-                completar <br>
-
-                <br>
-
-              
-              My tasks are adding functionalities ========================================================================.
+              My job is to add new functionalities and fix bugs in existing systems using JQuery and PHP with Boostrap.
               <br />
               <span class="date">12/2020 - Now</span>
             </div>
@@ -180,6 +173,8 @@
       </div>
     </div>
 
+    <div id="snackbar"></div>
+
     <div class="contact">
       <ul class="contact_list">
         <li>
@@ -219,10 +214,23 @@
         crypto.addEventListener("click", () => {
           localStorage.setItem("cryptoId", crypto.id);
           document.execCommand("copy");
+          showToast(crypto.textContent);
         })
       })
-
     });
+
+    function showToast(crypto) {
+      let snackbar = document.getElementById("snackbar");
+      let originalText = "address copied to clipboard.";
+
+      snackbar.innerHTML = `${crypto.trim()} ${originalText}`;
+      snackbar.className = "show";
+
+      setTimeout(() => {
+        snackbar.className = snackbar.className.replace("show", "");
+        snackbar.innerHTML = originalText;
+      }, 3000);
+    }
   </script>
 </body>
 
